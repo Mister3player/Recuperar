@@ -8,7 +8,6 @@ class Categoria(models.Model):
         return self.nombre  
 
 class Producto(models.Model):
-    # el foreignkey es para relacionar el dato hacia otra tabla en la base de datos
     vendedor = models.ForeignKey(User, on_delete=models.CASCADE)
     titulo = models.CharField(max_length=100)
     descripcion = models.TextField()

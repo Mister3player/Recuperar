@@ -38,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'publicaciones',
-    'carrito',
-    'cuentas',
-    'productos',
+    'usuarios',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +127,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/cuentas/login/'
-LOGIN_URL = '/cuentas/login/'
+# settings.py (Añadir al final)
 
+# Configuración de Autenticación
+LOGIN_REDIRECT_URL = '/'  # Redirige a la página de inicio (/) después del login
+LOGOUT_REDIRECT_URL = 'login' # Redirige a la página de inicio (/) después del logout
+LOGIN_URL = 'login'  # URL del login (usado por el decorador @login_required)
+# NOTA: Asegúrate de que tienes una vista mapeada a la URL '/' en tu app 'publicaciones'.
